@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Project 1 Test 1
+
+      Author: Ethan Aiello
+      Date:   10/2/2025
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Project 1 Test 1</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         Project 1 Test 1
+      </h1>
+   </header>
+
+   <article>
+      <h2>Catering Menu</h2>
+      <form>
+         <input type="checkbox" id="item1" value="40" />
+         <label for="item1">Hoagie Tray ($40.00)</label>
+         <input type="checkbox" id="item2" value="50" />
+         <label for="item2">Snack Tray ($50.00)</label>
+         <input type="checkbox" id="item3" value="45" />
+         <label for="item3">Stromboli  Tray ($45.00)</label>
+         <input type="checkbox" id="item4" value="35" />
+         <label for="item4">Pasta Tray($35.00)</label>
+         <input type="checkbox" id="item5" value="30" />
+         <label for="item5">Hot Dog Tray ($30.00)</label>
+         <input type="button" id="submit" value="Submit" />
+      </form>
+   </article>
+   <script>
+   function calcTotal(){
+   	var itemTotal = 0;
+	var item1 = document.getElementById("item1");
+   	var item2 = document.getElementById("item2");
+    var item3 = document.getElementById("item3");
+    var item4 = document.getElementById("item4");
+    var item5 = document.getElementById("item5");
+    (item1.checked)?(itemTotal += 40):(itemTotal += 0);
+    (item2.checked)?(itemTotal += 50):(itemTotal += 0);
+    (item3.checked)?(itemTotal += 45):(itemTotal += 0);
+    (item4.checked)?(itemTotal += 35):(itemTotal += 0);
+    (item5.checked)?(itemTotal += 30):(itemTotal += 0);
+    var salesTaxRate = 0.07;
+    var orderTotal = itemTotal + (itemTotal * salesTaxRate);
+    alert("Your order total is $" + orderTotal);
+    }
+
+	document.getElementById("submit").addEventListener("click", calcTotal, false);
+   </script>
+</body>
+</html>
